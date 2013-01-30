@@ -1,39 +1,51 @@
-export BASH_CONF="bash_profile"
+# source aliases
+source ~/.aliases
 
-export MKL_NUM_THREADS=1
+# source exports
+source ~/.exports
 
-# alias vim to macvim
-alias vim="mvim -v"
-alias vi="mvim -v"
+# source prompt
+source ~/.bash_prompt
 
-# alias to startup matlab in command line
-alias m="/Applications/MATLAB_R2012a.app/bin/matlab -nodesktop -nosplash"
+if [[ `uname` == "Darwin" ]]; then
+    # mba
+    # (only checks for OSX)
+    
+    # fix iterm2 tab title upon ssh logout
+    export PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"'
+    # source the python virtual environment at startup
+    source ~/.virtual_envs/system/bin/activate
 
-# alias to open pdf in skim
-alias skim='open -a Skim'
+    # fancy bash autocompletions
+    # too slow!
+    #if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    #    . $(brew --prefix)/etc/bash_completion
+    #fi
 
-# alias to always ls in color
-alias ls="ls -G"
+    # use grc to colorize various outputs
+    #source "`brew --prefix`/etc/grc.bashrc"
 
-# put homebrew in front of system PATH
-export PATH=$HOME/.cabal/bin:/usr/local/bin:/usr/local/sbin:$PATH
+    # load rvm into shell session *as a function*
+    [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
-# append PYTHONPATH for non-homebrew python
-export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
+    # enable autojump
+    # [[ -s `brew --prefix`/etc/autojump.sh]] && . `brew --prefix`/etc/autojump.sh
 
-# source the python virtual environment at startup
-source ~/.virtual_envs/system/bin/activate
-
-# fancy bash autocompletions
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-    . $(brew --prefix)/etc/bash_completion
+elif [[ `hostname | cut -d. -f2` == "titan" ]]; then
+    # titan specific things
+elif [[ `hostname` == "bling" ]]; then
+    # bling specific things
 fi
 
-# enable autojump (this is slow and disabled by default)
-# [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
-
-# load rvm into shell session
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
-# set prompt
-# PS1='[\u@\h \W]$ '
+# colorize less output
+man() {
+    env \
+        LESS_TERMCAP_mb=$(printf "\e[01;35m") \
+        LESS_TERMCAP_md=$(printf "\e[0;34m") \
+        LESS_TERMCAP_me=$(printf "\e[0m") \
+        LESS_TERMCAP_se=$(printf "\e[0m") \
+        LESS_TERMCAP_so=$(printf "\e[01;44;33m") \
+        LESS_TERMCAP_ue=$(printf "\e[0m") \
+        LESS_TERMCAP_us=$(printf "\e[04;36m") \
+            man "$@"
+}

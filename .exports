@@ -1,0 +1,29 @@
+if [[ `uname` == "Darwin" ]]; then
+    # mba specific export configuration
+    # (only checking if we are on OSX)
+    export PATH=$HOME/.cabal/bin:$PATH
+    export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+    export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
+elif [[ `hostname | cut -d. -f2` == "titan" ]]; then
+    # titan specific export configuration
+    export PATH=$HOME/bin:$PATH
+elif [[ `hostname` == "bling" ]]; then
+    # bling specific export configuration
+fi
+
+# universal path exports
+export PATH=$HOME/.scripts:$PATH
+
+# universal exports
+export BASH_CONF='bash_profile'
+export PAGER='less -R'
+export EDITOR="vim"
+
+# universal language settings
+# prefer US english and use UTF-8
+export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+
+# universal history settings
+export HISTCONTROL=ignoredups
+export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"

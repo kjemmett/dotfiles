@@ -1,0 +1,33 @@
+if [[ `uname` == "Darwin" ]]; then
+    # mba specific aliases
+    # (only checking if we are on OSX)
+    alias ipy='ipython --pylab'
+    alias skim='open -a Skim'
+    alias m='/Applications/MATLAB_R2012a.app/bin/matlab -nodesktop -nosplash'
+    alias vim="mvim -v"
+    alias vi="mvim -v"
+    alias v="mvim -v"
+elif [[ `hostname | cut -d. -f2` == "titan" ]]; then
+    # titan specific aliases
+    alias m='/nfs/apps/matlab/current/bin/matlab -nosplash -nodesktop'
+    alias scratch='/ifs/scratch/c2b2/cw_lab/kje2109'
+elif [[ `hostname` == "bling" ]]; then
+    # bling specific aliases
+    # bling is down atm.
+fi
+
+# universal aliases
+alias '..'='cd ..'
+alias '...'='cd ../..'
+alias '....'='cd ../../..'
+
+# Portable ls with colors
+if ls --color -d . >/dev/null 2>&1; then
+    colorflag="--color"
+elif ls -G -d . >/dev/null 2>&1; then
+    colorflag="-G"
+fi
+
+# list only directories
+alias ls='ls ${colorflag}'
+alias lsd='ls -l ${colorflag} | grep "^d"'
