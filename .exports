@@ -6,9 +6,11 @@ if [[ `uname` == "Darwin" ]]; then
     export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 elif [[ `hostname | cut -d. -f2` == "titan" ]]; then
     # titan specific export configuration
+    echo "loading titan exports"
     export PATH=$HOME/bin:$PATH
 elif [[ `hostname` == "bling" ]]; then
     # bling specific export configuration
+    echo "loading bling exports"
 fi
 
 # universal path exports

@@ -33,8 +33,10 @@ if [[ `uname` == "Darwin" ]]; then
 
 elif [[ `hostname | cut -d. -f2` == "titan" ]]; then
     # titan specific things
+    echo "loading titan profile"
 elif [[ `hostname` == "bling" ]]; then
     # bling specific things
+    echo "loading bling profile"
 fi
 
 # colorize less output

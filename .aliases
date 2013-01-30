@@ -9,11 +9,13 @@ if [[ `uname` == "Darwin" ]]; then
     alias v="mvim -v"
 elif [[ `hostname | cut -d. -f2` == "titan" ]]; then
     # titan specific aliases
+    echo "loading titan aliases"
     alias m='/nfs/apps/matlab/current/bin/matlab -nosplash -nodesktop'
     alias scratch='/ifs/scratch/c2b2/cw_lab/kje2109'
 elif [[ `hostname` == "bling" ]]; then
     # bling specific aliases
     # bling is down atm.
+    echo "loading bling aliases"
 fi
 
 # universal aliases
