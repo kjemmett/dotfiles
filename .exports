@@ -8,6 +8,10 @@ elif [[ `hostname | cut -d. -f2` == "titan" ]]; then
     # titan specific export configuration
     echo "loading titan exports"
     export PATH=$HOME/bin:$PATH
+
+    export SCRATCH='/ifs/scratch/c2b2/cw_lab/kje2109'
+    export PYTHONPATH="$HOME/apps/python27/bin/python"
+
 elif [[ `hostname` == "bling" ]]; then
     # bling specific export configuration
     echo "loading bling exports"
