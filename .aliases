@@ -4,9 +4,14 @@ if [[ `uname` == "Darwin" ]]; then
     alias ipy='ipython --pylab'
     alias skim='open -a Skim'
     alias m='/Applications/MATLAB_R2012a.app/bin/matlab -nodesktop -nosplash'
+
+    # easily get into macvim
     alias vim="mvim -v"
     alias vi="mvim -v"
     alias v="mvim -v"
+
+    # fix gitk
+    alias gitk='gitk 2>/dev/null'
 elif [[ `hostname | cut -d. -f2` == "titan" ]]; then
     # titan specific aliases
     echo "loading titan aliases"
