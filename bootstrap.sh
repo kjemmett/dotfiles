@@ -2,10 +2,11 @@
 # taken from: https://github.com/mathiasbynens/dotfiles
 
 cd "$(dirname "${BASH_SOURCE}")"
-git pull
+git pull origin master
 
 function doIt() {
     rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" --exclude "README.md" --exclude ".osx" -av . ~
+    source ~/.bash_profile
 }
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
     doIt
@@ -17,6 +18,3 @@ else
     fi
 fi
 unset doIt
-
-# should do some specific things depending on machine...
-source ~/.bash_profile

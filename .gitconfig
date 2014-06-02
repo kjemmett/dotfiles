@@ -1,8 +1,11 @@
 [user]
-	email = kjemmett@gmail.com
-	name = Kevin Emmett
+    email = kjemmett@gmail.com
+    name = Kevin Emmett
+[core]
+    excludesfile = ~/.gitignore
+    attributesfile = ~/.gitattributes
 [push]
-	default = simple
+    default = simple
 [color]
     branch = auto
     diff = auto
@@ -12,11 +15,14 @@
     local = yellow 
     remote = green
 [color "diff"]
-    meta = yellow
-    frag = magenta
-    old = red
-    new = green
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
 [color "status"]
     added = yellow
     changed = green
     untracked = cyan
+[merge]
+    # Include summaries of merged commits in newly created merge commit messages
+    log = true

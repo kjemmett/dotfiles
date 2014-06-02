@@ -13,8 +13,6 @@ if [[ `uname` == "Darwin" ]]; then
     
     # fix iterm2 tab title upon ssh logout
     export PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"'
-    # source the python virtual environment at startup
-    source ~/.virtual_envs/system/bin/activate
 
     # fancy bash autocompletions
     # too slow!
@@ -26,7 +24,7 @@ if [[ `uname` == "Darwin" ]]; then
     #source "`brew --prefix`/etc/grc.bashrc"
 
     # load rvm into shell session *as a function*
-    [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+    #[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
     # enable autojump
     # [[ -s `brew --prefix`/etc/autojump.sh]] && . `brew --prefix`/etc/autojump.sh
