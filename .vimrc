@@ -14,5 +14,8 @@ Plugin 'tpope/vim-markdown'
 Plugin 'bling/vim-airline'
 Plugin 'Valloric/YouCompleteMe'
 
+Plugin 'flazz/vim-colorschemes'
+Plugin 'tomasr/molokai'
+
 call vundle#end()
 filetype plugin indent on
