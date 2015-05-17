@@ -1,18 +1,7 @@
 if [[ `uname` == "Darwin" ]]; then
 
-    # mba specific export configuration
-    # (only checking if we are on OSX)
+    # osx specific export configuration
     export PATH=/usr/local/bin:/usr/local/sbin:$PATH
-    #export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
-
-elif [[ `hostname | cut -d. -f2` == "titan" ]]; then
-
-    # titan specific export configuration
-    echo "loading titan exports"
-    export PATH=$HOME/bin:$PATH
-
-    export SCRATCH='/ifs/scratch/c2b2/cw_lab/kje2109'
-    export PYTHONPATH="$HOME/apps/python27/bin/python"
 
 fi
 
