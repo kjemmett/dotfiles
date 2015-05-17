@@ -11,7 +11,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-markdown'
-Plugin 'bling/vim-airline'
+"Plugin 'bling/vim-airline'
 Plugin 'Valloric/YouCompleteMe'
 
 Plugin 'flazz/vim-colorschemes'
