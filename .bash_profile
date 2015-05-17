@@ -8,6 +8,7 @@ source ~/.exports
 source ~/.bash_prompt
 
 if [[ `uname` == "Darwin" ]]; then
+
     # mba
     # (only checks for OSX)
     
@@ -29,12 +30,6 @@ if [[ `uname` == "Darwin" ]]; then
     # enable autojump
     # [[ -s `brew --prefix`/etc/autojump.sh]] && . `brew --prefix`/etc/autojump.sh
 
-elif [[ `hostname | cut -d. -f2` == "titan" ]]; then
-    # titan specific things
-    echo "loading titan profile"
-elif [[ `hostname` == "bling" ]]; then
-    # bling specific things
-    echo "loading bling profile"
 fi
 
 # colorize less output
