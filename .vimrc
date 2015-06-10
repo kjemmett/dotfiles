@@ -13,6 +13,7 @@ Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-markdown'
 "Plugin 'bling/vim-airline'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'qpkorr/vim-renamer'
 
 Plugin 'flazz/vim-colorschemes'
 Plugin 'tomasr/molokai'
