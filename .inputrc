@@ -1,7 +1,21 @@
+# Make <tab> autocomplete regardless of case
 set completion-ignore-case on
 
+# List all matches
 set show-all-if-ambiguous on
 
+# Add a trailing slash when autocompleting symlinks to directories
 set mark-symlinked-directories on
 
+# Show all autocomplete results at once
 set page-completions off
+
+set completion-query-items 200
+
+# More intelligent autocompletes
+set skip-completed-text on
+
+# Allow UTF-8 input and output
+set input-meta on
+set output-meta on
+set convert-meta off

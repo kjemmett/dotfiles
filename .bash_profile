@@ -9,17 +9,15 @@ source ~/.bash_prompt
 
 if [[ `uname` == "Darwin" ]]; then
 
-    # mba
-    # (only checks for OSX)
-    
     # fix iterm2 tab title upon ssh logout
     export PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"'
 
-    # fancy bash autocompletions
-    # too slow!
-    #if [ -f $(brew --prefix)/etc/bash_completion ]; then
-    #    . $(brew --prefix)/etc/bash_completion
-    #fi
+    # Add fancy tab autocompletions for many Bash commands
+    if [ -f $(brew --prefix)/share/bash-completion/bash_completion ]; then
+        source "$(brew --prefix)/share/bash-completion/bash_completion";
+    elif [ -f /etc/bash_completion ]; then
+        source /etc/bash_completion;
+    fi
 
     # use grc to colorize various outputs
     #source "`brew --prefix`/etc/grc.bashrc"

@@ -19,5 +19,10 @@ export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 
 # universal history settings
+export HISTSIZE='32768'
+export HISTFILESIZE="${HISTSIZE}"
 export HISTCONTROL=ignoredups
 export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
+
+# Make Python use UTF-8 encoding for output to stdin, stdout, and stderr.
+export PYTHONIOENCODING='UTF-8'
